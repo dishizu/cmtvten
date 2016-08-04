@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.administrator.chushoutv">
+    package="com.example.administrator.chushoutv" >
 
     <!-- App Key 15afd17efdfe4 -->
     <!-- App Secret e2a74c799790df6b512c7b8e4ee88f03 -->
@@ -20,8 +20,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        android:theme="@style/AppTheme" >
+        <activity android:name=".activity.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,7 +35,7 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:windowSoftInputMode="stateHidden|adjustResize">
+            android:windowSoftInputMode="stateHidden|adjustResize" >
             <intent-filter>
                 <data android:scheme="tencent100371282" />
 
@@ -59,7 +59,12 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name=".activity.LoginActivity"></activity>
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.NewsActivity" />
+        <activity android:name=".activity.BillboardActivity" />
+        <activity android:name=".activity.HotActivity" />
+        <activity android:name=".activity.SearchActivity" >
+        </activity>
     </application>
 
 </manifest>

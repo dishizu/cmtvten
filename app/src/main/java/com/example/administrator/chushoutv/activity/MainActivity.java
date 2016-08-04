@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -21,7 +23,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener,RadioGroup.OnCheckedChangeListener {
+public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener,RadioGroup.OnCheckedChangeListener,View.OnClickListener {
     @BindView(R.id.tab_viewPager)
     ViewPager viewPager;
     @BindView(R.id.tab_radioGroup)
@@ -34,6 +36,17 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     RadioButton tab_zone;
     @BindView(R.id.tab_mine)
     RadioButton tab_mine;
+
+
+    @BindView(R.id.iv_news)
+    ImageView iv_news;
+    @BindView(R.id.iv_billboard)
+    ImageView iv_billboard;
+    @BindView(R.id.iv_hot)
+    ImageView iv_hot;
+    @BindView(R.id.iv_search)
+    ImageView iv_search;
+
     private List<Fragment>fragmentList;
     private ViewPagerAdapter adapter;
     private List<RadioButton>radioButtonList;
@@ -59,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(this);
         radioGroup.setOnCheckedChangeListener(this);
+        initListener();
     }
 
     @Override
@@ -105,5 +119,32 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                 break;
 
         }
+    }
+
+
+    public void initListener(){
+        iv_news.setOnClickListener(this);
+        iv_hot.setOnClickListener(this);
+        iv_billboard.setOnClickListener(this);
+        iv_search.setOnClickListener(this);
+    }
+    @Override
+    public void onClick(View v) {
+        Intent intent=new Intent();
+        switch (v.getId()){
+            case R.id.iv_news:
+                intent.setClass(this,NewsActivity.class);
+                break;
+            case R.id.iv_billboard:
+                intent.setClass(this,BillboardActivity.class);
+                break;
+            case R.id.iv_hot:
+                intent.setClass(this,HotActivity.class);
+                break;
+            case R.id.iv_search:
+                intent.setClass(this,SearchActivity.class);
+                break;
+        }
+        startActivity(intent);
     }
 }

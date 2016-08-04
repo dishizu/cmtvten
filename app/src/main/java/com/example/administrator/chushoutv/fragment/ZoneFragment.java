@@ -14,16 +14,9 @@ import com.example.administrator.chushoutv.R;
  */
 public class ZoneFragment extends Fragment {
 
-
-    public ZoneFragment() {
-        // Required empty public constructor
-    }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_zone, container, false);
     }
 
