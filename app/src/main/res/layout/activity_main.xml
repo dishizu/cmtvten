@@ -22,6 +22,7 @@
                 android:id="@+id/tab_home"
                 android:drawableTop="@drawable/tab_icon_home_selector"
                 android:text="首页"
+                android:checked="true"
                 style="@style/tab_RadioButton_style"/>
             <RadioButton
                 android:id="@+id/tab_subcribe"
