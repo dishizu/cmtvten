@@ -3,14 +3,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".activity.MainActivity">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/tab_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tab_radioGroup">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    </android.support.v4.view.ViewPager>
+
+        <RadioGroup
+            android:id="@+id/tab_radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/tab_home"
+                android:drawableTop="@drawable/tab_icon_home_selector"
+                android:text="首页"
+                style="@style/tab_RadioButton_style"/>
+            <RadioButton
+                android:id="@+id/tab_subcribe"
+                style="@style/tab_RadioButton_style"
+                android:drawableTop="@drawable/tab_icon_subcribe_selector"
+                android:text="关注"/>
+            <ImageView
+                android:id="@+id/tab_choushoulu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:src="@drawable/tab_icon_chushoulu_selector"/>
+            <RadioButton
+                android:id="@+id/tab_zone"
+                style="@style/tab_RadioButton_style"
+                android:text="专区"
+                android:drawableTop="@drawable/tab_icon_zone_selector"/>
+            <RadioButton
+                android:id="@+id/tab_mine"
+                android:text="我的"
+                android:drawableTop="@drawable/tab_icon_mine_selector"
+                style="@style/tab_RadioButton_style"/>
+        </RadioGroup>
 </RelativeLayout>
